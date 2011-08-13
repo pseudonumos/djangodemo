@@ -1,0 +1,83 @@
+/**
+ * CSS File for ezMark jQuery Plugin
+ *
+ **/
+.ez-hide { opacity: 0; filter:alpha(opacity=0); width: 72px; height: 62px; /}
+.ez-checkbox {
+	background: transparent url('../images/checkbox-red.png') 0 1px no-repeat;
+	display:inline-block;
+}
+
+.ez-radio {
+	background: transparent url('../images/radio-black.png') 0 1px no-repeat;
+	display:inline-block;
+}
+
+.ez-checked { background-position: 0 -68px; }
+.ez-selected { background-position: 0 -69px; }
+
+.ez-checkbox-green {
+	background: transparent url('../images/checkbox-green.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-green { background-position: 0 -18px; }
+.ez-checkbox, .ez-radio { zoom: 1; *display:inline; _height:30px; height: 62px; width:72px;}
+
+
+.ez-checkbox-train {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/train.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-train { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-bus {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/bus.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-bus { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-plane {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/plane.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-plane { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-bike {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/bike.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-bike { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-ferry {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/ferry.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-ferry { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-car {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/car.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-car { height: 62px; width:72px; background-position: 0 -62px; }
+.ez-checkbox-taxi {
+	width:72px;
+	height: 62px;
+	background: transparent url('../images/taxi.png') 0 1px no-repeat;
+	display:inline-block;
+	*display: inline;
+}
+.ez-checked-taxi { height: 62px; width:72px; background-position: 0 -62px; }

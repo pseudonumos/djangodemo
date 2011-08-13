@@ -1,0 +1,101 @@
+{% extends "search/base.html" %}
+
+<div id="container" class="round">
+
+	
+	<div id="voyage-listing">
+		<%= render 'layouts/voyagetabs' %>
+		<div id="transportation-reselect">
+			<%= render 'layouts/transportationtable' %>
+		</div>
+		<!-- <%= render 'layouts/graph' %> -->
+	</div>
+
+	<div id="right-bar" class="round">
+		<%= render 'layouts/rightbar' %>
+	</div>
+	
+</div>
+	
+	<script>
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=');
+        if (p.length != 2) continue;
+        b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+
+	</script>	
+	
+<script type="text/javascript">
+
+
+// Create the tooltips only on document load
+$(document).ready(function() 
+{
+   // Notice the use of the each() method to acquire access to each elements attributes
+   $('#itinerary img[tooltip]').each(function()
+   {
+      $(this).qtip({
+         content: $(this).attr('tooltip'), // Use the tooltip attribute of the element for the content
+         style: 'dark' // Give it a crea mstyle to make it stand out
+      });
+   });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+	<script>
+	$(function() {
+		
+		$( "#format" ).buttonset();
+	});
+	</script>
+
+
+	<script>
+	// increase the default animation speed to exaggerate the effect
+	$.fx.speeds._default = 1000;
+
+	$(function() {
+		$( "#dialog2" ).dialog({
+			autoOpen: false,
+			show: "blind",
+			hide: "slide",
+			width: "525",
+			height: "550"
+		});
+		
+		$( "#details-button2" ).click(function() {
+			$( "#dialog2" ).dialog( "open" );
+			return false;
+		});
+		//}
+	});
+
+	$(function() {
+			$( "#details-button2" ).button();
+			$( "a", ".demo" ).click(function() { return false; });
+	});
+</script>
+	
+	
+		<style>
+	.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+	</style>
+

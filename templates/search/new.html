@@ -1,0 +1,187 @@
+{% extends "search/base.html" %}
+
+{% block content %}
+
+	<div id="sharing_hide" style="display:block">
+	<form action="results" method="get">
+		<div id="locations" style="margin-top: 20px;">
+			<div id="start-address" class="round">
+				START ADDRESS
+				<div id="startstreet">
+					<label for="start_address">Street </label><input id="start_address" name="start_address"></br>
+				</div>
+				<div id="startcity">
+					<label for="start">City </label>
+					<div class="ui-widget"style="display:inline">
+						<input style="width:150px;" id="start" name="start_location">
+					</div>
+				</div>
+			
+			</div>
+			<div id="end-address" class="round">
+				END ADDRESS
+				<div id="endstreet">
+					<label for="end_address">Street </label><input id="end_address" name="end_address" ></br>
+				</div>
+				<div id="endcity">								
+					<label for="end">City</label>
+					<div class="ui-widget" style="display:inline">
+						<input style="width:150px;" id="end" name="end_location">
+					</div></br>
+				</div>						
+			</div>
+	</br></br></br></br></br>
+		</div>
+	</br>
+		<div id="dates" style="margin-top: 20px;" class="round">
+			<div id="start_date_box" style="display:inline"> 
+				<label for="start_date" style="font-weight:bold font-family: Arial">Start Date</label>
+				<input type="text" name="start_date" id="start_date" />
+			</div>
+			<div id="end_date_hide" style="display:inline; float:right;" >
+				<label for="return_date">Return Date</label>
+				<input type="text" name="return_date" id="return_date" />
+			</div>
+		</div>
+		</br>
+	
+	<div class="transportation-table round">
+	Select Transportation Options:
+	<div class="inner-transpo round">
+		<table>
+			<tr align="center">
+				<td><input type="hidden" form="searchform" name="traincheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform" id="traincheckbox" name="traincheckbox" value="1" align="middle"  class="submittable"/>
+				<div class="transpo-title">Train</div>
+				</td>
+				<td><input type="hidden" form="searchform" name="planecheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform" id="planecheckbox" name="planecheckbox" value="1" align="middle"  class="submittable"/>
+				<div class="transpo-title">Plane</div>
+				</td>
+				<td><input type="hidden" form="searchform" name="buscheckbox" value="0" class="submittable ez-checkbox-bus"/>
+					<input type="checkbox" form="searchform" id="buscheckbox" name="buscheckbox" value="1" align="middle" class="submittable ez-checkbox-bus"/>
+				<div class="transpo-title">Bus</div>
+				</td>
+				<td><input type="hidden" form="searchform" name="ferrycheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform" id="ferrycheckbox" name="ferrycheckbox" value="1" align="middle"  class="submittable" tooltip="hello"/>
+				<div class="transpo-title">Ferry</div>
+				</td>
+
+				<td><input type="hidden" form="searchform" name="carcheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform"  id="carcheckbox" name="carcheckbox" value="1" align="middle"  class="submittable"/>
+				<div class="transpo-title">Car</div>
+				</td>
+				<td><input type="hidden" form="searchform" name="bikecheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform" id="bikecheckbox" name="bikecheckbox" value="1" align="middle"  class="submittable"/>
+				<div class="transpo-title">Bike</div>
+				</td>
+				<td><input type="hidden" form="searchform" name="taxicheckbox" value="0" class="submittable"/>
+					<input type="checkbox" form="searchform" id="taxicheckbox" name="taxicheckbox" value="1" align="middle"  class="submittable"/>
+				<div class="transpo-title">Walk</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+	</div>
+	
+		<div class="actions">
+			<div class="demo"> 
+				<input type="submit" value="search"/>
+			</div> 
+		</div>
+
+	</form>
+
+	</div>
+<script type="text/javascript">
+
+
+
+
+
+
+$('#bikecheckbox').ezMark({checkboxCls: 'ez-checkbox-bike', checkedCls: 'ez-checked-bike', width: '73px', height: '68px'});
+
+$('#buscheckbox').ezMark({checkboxCls: 'ez-checkbox-bus', checkedCls: 'ez-checked-bus', width: '73px', height: '68px'});
+$('#ferrycheckbox').ezMark({checkboxCls: 'ez-checkbox-ferry', checkedCls: 'ez-checked-ferry', width: '73px', height: '68px'});
+$('#planecheckbox').ezMark({checkboxCls: 'ez-checkbox-plane', checkedCls: 'ez-checked-plane', width: '73px', height: '68px'});
+$('#traincheckbox').ezMark({checkboxCls: 'ez-checkbox-train', checkedCls: 'ez-checked-train', width: '73px', height: '68px'});
+$('#carcheckbox').ezMark({checkboxCls: 'ez-checkbox-car', checkedCls: 'ez-checked-car', width: '73px', height: '68px'});
+$('#taxicheckbox').ezMark({checkboxCls: 'ez-checkbox-taxi', checkedCls: 'ez-checked-taxi', width: '73px', height: '68px'});
+	$(function() {
+		$( "#accordion" ).accordion();
+	});
+{% load static %}
+$(function()
+{
+	$('#start_date').datepicker({dateFormat: 'yy-dd-mm', showOn: "button", buttonImageOnly: true, buttonImage: "{% get_static_prefix %}images/calendar.gif", minDate: '2011-12-09', maxDate: '2011-12-09'});
+});
+
+$(function()
+{
+	$('#return_date').datepicker({dateFormat: 'yy-dd-mm', showOn: "button", buttonImageOnly: true, buttonImage: "{% get_static_prefix %}images/calendar.gif", minDate: '2011-19-09', maxDate: '2011-19-09'});
+});
+	$(function() {
+		var availableTags = [
+			"Paris", "Toulouse","London", "New York City", "Washington DC", "Tallinn", "Stockholm"];
+		$( "#start" ).autocomplete({
+			source: availableTags
+		});
+			$( "#end" ).autocomplete({
+			source: availableTags
+		});
+	});
+
+		
+	$(function() {
+		$( "button, input:submit, a", ".demo" ).button();
+		$( "a", ".demo" ).click(function() { return false; });
+	});
+
+	$(function() {
+		$( "#radio" ).buttonset();
+	});
+		$(function() {
+		$( "#transportation" ).buttonset();
+	});
+	</script>
+	
+		<script type="text/javascript">
+	$(function() {
+		
+
+		$("#newsideinfo").addClass("ui-accordion ui-widget ui-helper-reset")
+		
+		.find("h3")
+			.addClass("ui-accordion-header ui-helper-reset ui-state-default ui-corner-top ui-corner-bottom")
+			.prepend('<span class="ui-icon ui-icon-triangle-1-e"/>')
+			.click(function() {
+				$(this).toggleClass("ui-accordion-header-active").toggleClass("ui-state-active")
+					.toggleClass("ui-state-default").toggleClass("ui-corner-bottom")
+				.find("> .ui-icon").toggleClass("ui-icon-triangle-1-e").toggleClass("ui-icon-triangle-1-s")
+				.end().next().toggleClass("ui-accordion-content-active").toggle();
+				return false;
+			})
+			.next().addClass("ui-helper-reset ui-widget-content ui-corner-bottom");
+	});
+	</script>
+<script>
+jQuery(document).ready(function(){
+ //param 1 is the CSS class to apply when the textbox is empty
+ //param 2 is the "normal" css state of the textbox (if any) typically it will be null but you can use it if it fits your needs..
+//param 3 is the watermark text to apply when the textbox is empty 
+	$("#start_address").waterMarker("WaterMark", null, "City Center");	
+	$("#end_address").waterMarker("WaterMark", null,"City Center");	
+$("#start_date").waterMarker("WaterMark", null,"Dates Restricted");
+$("#return_date").waterMarker("WaterMark", null,"Dates Restricted");
+$("#start").waterMarker("WaterMark", null,"LIMITED CITIES");
+$("#end").waterMarker("WaterMark", null,"LIMITED CITIES");
+
+});
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,497 @@
+
+#search-container{
+margin-left: auto;
+margin-right: auto;
+width: 850px;
+font-size: .8em;
+height: 900px;
+}
+
+#main-search{
+width: 800px;
+background: #F2F2F2;
+padding: 25px;
+height: 450px;
+}
+
+#title-area{
+
+margin-left: 0px;
+}
+
+#logo{
+padding: 15px;
+font-weight: bold;
+font-size: 2em;
+color: white;
+}
+
+#locations{
+padding: 3px;
+display: inline;
+size: 70em;
+}
+.accordion-info{
+margin-left: 500px;
+width: 200px;
+}
+
+#loading-bar{
+width: 400px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 300px;
+}
+
+#ui-datepicker-div { font-size: 12px; }
+.ui-widget{ font-size:0.8em; }
+.ui-buttonset { font-size: 12px; }
+.ui-accordion { font-size: 12px;  }
+
+#dates{
+background: #F2F2F2;
+padding: 13px;
+margin-top: 10px;
+}
+#trip_type{
+margin-left: auto;
+margin-right: auto;
+}
+
+.transportation-table{
+background: #F2F2F2;
+padding: 13px;
+margin-left: auto;
+margin-right: auto;
+}
+.transpo-title{
+font-weight:bold;
+}
+.inner-transpo{
+background: white;
+padding: 7px;
+
+}
+
+.transportation-table table tr td {
+
+padding: 0px;
+
+margin-top: 0px;
+
+}
+.transportation-table table tr{
+
+padding: 0px;
+
+margin-top: 0px;
+
+}
+#sub-search{
+background-color: white;
+padding: 10px;
+width: 550px;
+float: left;
+}
+#choices4{
+outline: 2px solid black;
+}
+
+
+
+
+#footer{
+background: white;
+width: 600px;
+height: 30px;
+padding: 5px;
+margin-top: 5px;
+
+}
+#links{
+margin-left: auto;
+margin-right: auto;
+
+}
+
+#footer :hover{
+border: yellow;
+}
+.round {
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius:         5px;
+  behavior: url(/stylesheets/border-radius.htc); 
+}
+.round2 {
+  -moz-border-radius:    2px;
+  -webkit-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius:         2px;
+  behavior: url(/stylesheets/border-radius.htc);
+  
+}
+
+
+#info{
+height: 35px;
+width: 275px;
+background: #F0F0F0;
+
+}
+#details{
+float: right;
+
+}
+#details-button0{
+float: right;
+}
+#details-button1{
+float: right;
+}
+#details-button2{
+float: right;
+}
+#voyage:hover{
+border-color:#EAC117;
+
+}
+#voyage{
+width: 450px;
+height: 90px;
+background: #336699;
+padding: 2px;
+margin: 5px;
+border-style:solid;
+border-color:#95B9C7;
+}
+
+#itinerary{
+float:left;
+background: white;
+width: 307px;
+height: 80px;
+padding: 5px;
+text-align: bottom;
+}
+#cost{
+float:right;
+font-size: 11px;
+background: white;
+width: 120px;
+height: 80px;
+padding: 5px;
+}
+#voyage-listing{
+
+margin:2px;
+float:left;
+
+}
+
+#graph{
+
+
+background: #FFFFFF;
+
+}
+
+#container{
+width: 940px;
+height: 1450px;
+padding: 0px;
+}
+
+#left-bar{
+float:left;
+width: 210px;
+
+padding: 0px;
+
+}
+
+div.dialog table tbody tr td { border: 1px #ccc solid; background:white; }
+div.dialog td, th { border: 1px #ccc solid; background:white; }
+div.dialog table { border-collapse: collapse; width: 480px;}
+
+.ui-button .ui-button-text { display: block; line-height: 1.0; font-size: 11px; font-style:bold;}
+.ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; width: 8.5em; height: 2.3em;} /* the overflow property removes extra width in IE */
+.ui-accordion .ui-accordion-content { padding: .5em .22em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em 1.9em; }
+
+.transportation-table table { border-collapse: collapse; width: 480px;}
+
+#transportation-reselect{
+padding: 2px;
+margin-left: auto;
+margin-right: auto;
+}
+
+#right-bar{
+float: right;
+width: 200px;
+height: 500px;
+
+}
+.right-ad-bar{
+display: block;
+}
+
+.inbetweeners{
+width:250px;
+height: 220px;
+padding: 3px;
+float:left;
+}
+div.inbetweeners h3{
+width: 250px;
+}
+
+.explanation{
+width: 470px;
+}
+
+.explanationtitle{
+text-decoration: underline;
+}
+/* For some reason saying float:right messes up the display of
+the "total" box and puts it outside of the notaccordion*/
+.total-tweener{
+margin-left: 150px;
+border: 1px solid #336699;
+width: 70px;
+height: 25px;
+padding: 2px;
+}
+#taxes{
+width: 200px;
+height: 100px;
+float: right;
+padding: 3px;
+}
+div#taxes h3{
+width: 200px;
+}
+.total-taxes{
+margin-left: 120px;
+border: 1px solid #336699;
+width: 70px;
+height: 25px;
+padding: 2px;
+}
+footer{
+margin-left: auto;
+margin-right: auto;
+clear:both;
+text-align:center;
+}
+footer ul{
+
+margin: 0; padding: 0;
+margin-left: auto;
+margin-right: auto;
+}
+
+footer ul li{
+
+display: inline;
+}
+
+footer ul li a{
+font-size: 12px;
+}
+
+#footer{
+margin-left: auto;
+margin-right: auto;
+
+}
+
+#newsidebar{
+float: right;
+}
+
+
+#newsideinfo{
+width: 200px;
+height: 100px;
+float: right;
+padding: 3px;
+}
+div#newsideinfo h3{
+width: 200px;
+}
+#start-address{
+background: #F2F2F2;
+float: left;
+padding: 7px;
+}
+#end-address{
+background: #F2F2F2;
+float: right;
+padding: 7px;
+}
+#startcity{
+padding:5px;
+}
+#startzipcountry{
+padding:5px;
+}
+#startstreet{
+padding:5px;
+}
+#endcity{
+padding:5px;
+}
+#endzipcountry{
+padding:5px;
+}
+#endstreet{
+padding:5px;
+}
+.addspace{
+padding:5px;
+}
+
+.view-result{
+float: right;
+}
+
+#result-time{
+background: white;
+float:left;
+padding:5px;
+margin-left: 5px;
+}
+
+#result-stops{
+background: white;
+float:left;
+padding:5px;
+margin-left: 5px;
+}
+
+#result-total-pricetag{
+background: white;
+float:left;
+padding:5px;
+margin-left: 5px;
+}
+
+#result-final-estimated{
+background: white;
+float:left;
+padding:5px;
+margin-left: 5px;
+}
+#route{
+padding: 15px;
+width: 800px;
+height: 1200px;
+background: #F2F2F2;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+
+#maps{
+width: 300px;
+
+background: white;
+float: right;
+margin-top: 15px;
+padding:10px;
+}
+
+#map_canvas { height: 100% }
+
+#googlemaps-departure{
+float:right;
+
+}
+
+#googlemaps-arrival{
+float:right;
+
+}
+
+#route-itinerary{
+float:left;
+}
+
+#departure-choice{
+float:left;
+background: #F2F2F2;
+margin-bottom: 10px;
+padding: 5px;
+}
+
+#arrival-choice{
+float:right;
+background: #F2F2F2;
+margin-bottom: 10px;
+padding: 5px;
+}
+
+#leg{
+background: #659EC7;
+}
+
+#itinerary-title{
+background:#659EC7;
+padding: 10px;
+margin-top: 15px;
+width: 70px;
+}
+#details{
+width: 60px;
+height: 60px;
+margin-top: 10px;
+
+}
+.gotoresult{
+padding: 5px;
+padding-right: 10px;
+padding-left: 10px;
+width: 80px;
+margin-top: 10px;
+}
+
+#details a:hover{
+
+
+}
+
+.WaterMark
+{
+ color:#666666;
+}
+
+.page-explanation{
+background: #F2F2F2;
+padding: 17px;
+width: 500px;
+height: 900px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 20px;
+}
+
+#start_date{
+width: 150px;
+}
+
+#return_date{
+width: 150px;
+}
+
+#start-date-box{
+
+}
+
+#return-date-box{
+
+}
+
