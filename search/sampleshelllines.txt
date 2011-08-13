@@ -1,0 +1,16 @@
+v = Voyage(departure_hub="Paris Gare du Nord", arrival_hub="London Victoria Station", real_price=50.0, price_tag=45.0, departure_date_time=datetime.datetime(2011,8,11,5,30), arrival_date_time=datetime.datetime(2011,8,11,8,30), stops=0, transit_time=time(3, 15), departure_city="Paris", arrival_city="London", transportation_type="train")
+
+
+r = Result(departure_hub="Paris Gare du Nord", arrival_hub="London Victoria Station", real_price=50.0, price_tag=45.0, departure_date_time=datetime.datetime(2011,8,11,5,30), arrival_date_time=datetime.datetime(2011,8,11,8,30), stops=0, transit_time=time(3, 15), departure_city="Paris", arrival_city="London", train_boolean=False, plane_boolean=True, bus_boolean=False, ferry_boolean=False)
+
+v.result_set.add(r)
+r.voyages.add(v)
+r.voyages.all()
+v.result_set.all()
+
+
+I've got a ManyToMany field for one of my models called "district".  I wanted to link the model instance to one district object (district ID #1):
+
+"district": [1]
+If I wanted add them to more than one district it would look like this:
+"district": [1, 2, 5]

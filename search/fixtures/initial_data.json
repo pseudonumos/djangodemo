@@ -1,0 +1,41 @@
+[
+	{
+		"model": "search.voyage",
+		"pk": 1,
+		"fields": {
+			"departure_hub": "Paris Gare du Nord",
+			"arrival_hub": "London Victoria Station",
+			"real_price": 60,
+			"price_tag": 30,
+			"departure_date_time": "2011-08-13 12:30:00",
+			"arrival_date_time": "2011-08-13 12:30:00",
+			"stops": 0,
+			"transit_time": "03:30:00",
+			"departure_city": "Paris",
+			"arrival_city": "London",
+			"transportation_type": "plane"
+			
+			}
+	},
+	{
+		"model": "search.result",
+		"pk": 1,
+		"fields": {
+			"departure_hub": "Paris Gare du Nord",
+			"arrival_hub": "London Victoria Station",
+			"real_price": 60,
+			"price_tag": 30,
+			"departure_date_time": "2011-08-13 12:30:00",
+			"arrival_date_time": "2011-08-13 12:30:00",
+			"stops": 0,
+			"transit_time": "03:30:00",
+			"departure_city": "Paris",
+			"arrival_city": "London",
+			"train_boolean": "False",
+			"plane_boolean": "True",
+			"bus_boolean": "False",
+			"ferry_boolean": "False",
+			"voyages": [1]
+			}
+	}
+]
