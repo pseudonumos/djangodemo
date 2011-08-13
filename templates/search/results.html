@@ -1,18 +1,117 @@
 {% extends "search/base.html" %}
+{% load static %}
+{% block content %}
 
 <div id="container" class="round">
 
 	
 	<div id="voyage-listing">
-		<%= render 'layouts/voyagetabs' %>
-		<div id="transportation-reselect">
-			<%= render 'layouts/transportationtable' %>
-		</div>
+			<div id="price-sort-to">
 		
+	</div>
+	<div id="results">
+       
+			<table class="round">
+			  <tr>
+				<th style="vertical-align:top; display:none">Efficiency Score</th>
+				<th style="vertical-align:top; display:none">Real Price</th> 
+				<th style="vertical-align:top; display:none">Transit Time</th>
+				<th style="vertical-align:top; display:none">Stops</th>
+				<th style="vertical-align:top; display:none">Display</th>
+				
+			  </tr>
+
+			{% for result in results_list %}				
+					  <tr>
+						<td style="vertical-align:top; display:none"><%= result.escore%></td>
+						<td style="vertical-align:top; display:none"><%= result.real_price %></td>
+
+						<td style="vertical-align:top; display:none"><%= result.transit_time %></td>
+						<td style="vertical-align:top; display:none"><%= result.stops %></td>
+						<td class="dragonlythis">
+							<div class="round" id="voyage">
+								<div class="round2" id="itinerary">
+								{% load static %}
+									{% for voyage in result.voyages.all %}
+										<img src="{% get_static_prefix %}images/{% voyage.transportation_type %}.jpg" 											tooltip="From:{% voyage.departure_hub %}<br/>
+										To: {% voyage.arrival_hub %}<br/> 
+										Departure:{% voyage.departure_date_time %} </br>
+										Arrival:{% voyage.arrival_date_time %} </br> 
+										Transit Time: {% voyage.transit_time %}" 
+									{% endfor %}
+									
+									<div id="details" class="round">
+									<a href="#" class="ui-state-default ui-corner-all gotoresult">GO </a>
+									<!-- <%= link_to 'GO', URI.escape('results/'+result.id.to_s+'?start_address='+params[:start_address]+','+params[:start_location]+'&end_address='+params[:end_address]+','+params[:end_location]+'&departure='+result.departure+'&arrival='+result.arrival), :class =>"ui-state-default ui-corner-all gotoresult" %> -->
+
+									</div>
+							
+									<div class="round2" id="info">
+									Departure: {% result.departure_date_time %}  </br>
+									Arrival: {% result.arrival_date_time %}    </br>
+									</div>
+				</div>
+				<div class="round2" id="cost">
+				<table>
+				<tr>
+					<td style="vertical-align:top"><label for="stops">Stops</label></br><img id="stops" src="{% get_static_prefix %}images/stop.png" tooltip="# of tops"/>{% result.stops %}</td>
+					<td style="vertical-align:top"><label for="time1">Time</label></br><img id="time1" src="{% get_static_prefix %}images/time.png" tooltip="# of tops"/>{%result.transit_time %}</td>
+					
+				</tr>
+				<tr>
+					<td style="vertical-align:top"><label for="pricetag">Price Tag</label><img id="pricetag" src="{% get_static_prefix %}images/pricetag.jpg" tooltip="Pricetag"/>{% result.price_tag %}</td>
+					<td style="vertical-align:top"><label for="realcost">Final Price</label><img id="realcost" src="{% get_static_prefix %}images/dollar.jpg" tooltip="Estimated Total Price"/>{% result.real_price %}</td>
+					
+				</tr>
+				</table>
+				</div>
+				</div>
+			</td>
+		  </tr>
+{% endfor %}	
+
+</table>
+
+
+ </div>
 	</div>
 
 	<div id="right-bar" class="round">
-		<%= render 'layouts/rightbar' %>
+<table>
+	<tr>
+		<td>
+			<div id="cart">
+				<h1 class="ui-widget-header">Save</h1>
+				<div>
+					<div class="ui-widget-content">
+						<ol>
+							<li class="placeholder">Drag Your Favorite Routes Here</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			
+				<div class="right-ad-bar">
+					<script type="text/javascript"><!--
+					google_ad_client = "ca-pub-5609456848181056";
+					/* contentbartextad */
+					google_ad_slot = "2176448574";
+					google_ad_width = 234;
+					google_ad_height = 60;
+					//-->
+					</script>
+					<script type="text/javascript"
+					src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+					</script>
+				</div>
+			
+		</td>
+	</tr>
+</table>
 	</div>
 	
 </div>
@@ -68,34 +167,12 @@ $(document).ready(function()
 	</script>
 
 
-	<script>
-	// increase the default animation speed to exaggerate the effect
-	$.fx.speeds._default = 1000;
 
-	$(function() {
-		$( "#dialog2" ).dialog({
-			autoOpen: false,
-			show: "blind",
-			hide: "slide",
-			width: "525",
-			height: "550"
-		});
-		
-		$( "#details-button2" ).click(function() {
-			$( "#dialog2" ).dialog( "open" );
-			return false;
-		});
-		//}
-	});
-
-	$(function() {
-			$( "#details-button2" ).button();
-			$( "a", ".demo" ).click(function() { return false; });
-	});
-</script>
 	
 	
 		<style>
 	.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
 	</style>
+
+{% endblock content %}
 
