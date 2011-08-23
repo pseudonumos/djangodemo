@@ -31,13 +31,13 @@
 						<td class="dragonlythis">
 							<div class="round" id="voyage">
 								<div class="round2" id="itinerary">
-								{% load static %}
 									{% for voyage in result.voyages.all %}
-										<img src="{% get_static_prefix %}images/{% voyage.transportation_type %}.jpg" 											tooltip="From:{% voyage.departure_hub %}<br/>
-										To: {% voyage.arrival_hub %}<br/> 
-										Departure:{% voyage.departure_date_time %} </br>
-										Arrival:{% voyage.arrival_date_time %} </br> 
-										Transit Time: {% voyage.transit_time %}" 
+										<img src="{% get_static_prefix %}images/{{ voyage.transportation_type }}.jpg"
+                                        tooltip="From:{{ voyage.departure_hub }}<br/>
+										To: {{ voyage.arrival_hub }}<br/> 
+										Departure:{{ voyage.departure_date_time }} </br>
+										Arrival:{{ voyage.arrival_date_time }} </br> 
+										Transit Time: {{ voyage.transit_time }}" 
 									{% endfor %}
 									
 									<div id="details" class="round">
@@ -47,20 +47,28 @@
 									</div>
 							
 									<div class="round2" id="info">
-									Departure: {% result.departure_date_time %}  </br>
-									Arrival: {% result.arrival_date_time %}    </br>
+									Departure: {{ result.departure_date_time }}  </br>
+									Arrival: {{ result.arrival_date_time }}    </br>
 									</div>
 				</div>
 				<div class="round2" id="cost">
 				<table>
 				<tr>
-					<td style="vertical-align:top"><label for="stops">Stops</label></br><img id="stops" src="{% get_static_prefix %}images/stop.png" tooltip="# of tops"/>{% result.stops %}</td>
-					<td style="vertical-align:top"><label for="time1">Time</label></br><img id="time1" src="{% get_static_prefix %}images/time.png" tooltip="# of tops"/>{%result.transit_time %}</td>
+					<td style="vertical-align:top"><label for="stops">Stops</label></br><img
+                    id="stops" src="{% get_static_prefix %}images/stop.png" tooltip="# of
+                    tops"/>{{ result.stops }}</td>
+					<td style="vertical-align:top"><label for="time1">Time</label></br><img
+                    id="time1" src="{% get_static_prefix %}images/time.png" tooltip="# of
+                    tops"/>{{ result.transit_time }}</td>
 					
 				</tr>
 				<tr>
-					<td style="vertical-align:top"><label for="pricetag">Price Tag</label><img id="pricetag" src="{% get_static_prefix %}images/pricetag.jpg" tooltip="Pricetag"/>{% result.price_tag %}</td>
-					<td style="vertical-align:top"><label for="realcost">Final Price</label><img id="realcost" src="{% get_static_prefix %}images/dollar.jpg" tooltip="Estimated Total Price"/>{% result.real_price %}</td>
+					<td style="vertical-align:top"><label for="pricetag">Price Tag</label><img
+                    id="pricetag" src="{% get_static_prefix %}images/pricetag.jpg"
+                    tooltip="Pricetag"/>{{ result.price_tag }}</td>
+					<td style="vertical-align:top"><label for="realcost">Final Price</label><img
+                    id="realcost" src="{% get_static_prefix %}images/dollar.jpg"
+                    tooltip="Estimated Total Price"/>{{ result.real_price }}</td>
 					
 				</tr>
 				</table>

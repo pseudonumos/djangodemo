@@ -6,11 +6,14 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext
 
 def new(request):
-	return render_to_response('search/new.html')
+    return render_to_response('search/new.html')
 
 def results(request):
-	#departure_city = request.GET['departure_city']
-	results_list = Result.objects.all()
-	return render_to_response('search/results.html', {'results_list': results_list})
+    #departure_city = request.GET['departure_city']
+    results_list = Result.objects.all()
+    print results_list
+    for result in results_list:
+        print result.voyages
+    return render_to_response('search/results.html', {'results_list': results_list})
 
 

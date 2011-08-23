@@ -1,3 +1,4 @@
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.defaults import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -6,10 +7,10 @@ from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-	(r'^/$', 'search.views.new'),
-	(r'^new/$', 'search.views.new'),
-	(r'^search/$', 'search.views.new'),
-	(r'^search/results/$', 'search.views.results'),
+	url(r'^$', 'search.views.new'),
+	url(r'^new/$', 'search.views.new'),
+	url(r'^search/$', 'search.views.new'),
+	url(r'^search/results/$', 'search.views.results'),
     # url(r'^$', 'demo.views.home', name='home'),
     # url(r'^demo/', include('demo.foo.urls')),
 
@@ -19,3 +20,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += staticfiles_urlpatterns()
